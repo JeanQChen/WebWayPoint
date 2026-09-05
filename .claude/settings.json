@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls -la /d/AiProject/WebWaypoint 2>/dev/null && echo \"---ROOT---\" && ls -la /d/AiProject 2>/dev/null)",
+      "Read(//d/AiProject/**)",
+      "Bash(npm --version)",
+      "Bash(pnpm --version)",
+      "Bash(yarn --version)",
+      "Bash(git --version)",
+      "Bash(npx --yes create-next-app@latest . --ts --tailwind --eslint --app --no-src-dir --import-alias \"@/*\" --use-npm --turbopack --yes)",
+      "Bash(npx --yes create-next-app@latest _tmp --ts --tailwind --eslint --app --no-src-dir --import-alias \"@/*\" --use-npm --turbopack --yes)",
+      "Bash(npx --yes create-next-app@latest waypointtmp --ts --tailwind --eslint --app --no-src-dir --import-alias \"@/*\" --use-npm --turbopack --yes)",
+      "Bash(npm pkg *)",
+      "Bash(npm install *)",
+      "Bash(npm ls *)",
+      "Bash(node -e ' *)",
+      "Bash(npm run *)",
+      "Bash(npx playwright *)",
+      "Bash(curl -s --max-time 20 https://api.github.com/repos/bojieli/ai-agent-book)",
+      "Bash(npm test *)"
+    ]
+  }
+}

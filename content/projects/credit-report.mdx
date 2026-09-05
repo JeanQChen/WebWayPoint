@@ -1,0 +1,101 @@
+## What is this?
+
+授信报告生成器是一个围绕授信研究和报告生成构建的金融 AI 项目：它从「用通用大模型直接生成报告」开始，逐步走向 OCR、Workflow、专业金融分析模块、RAG，以及 Evaluation、Evidence、Harness、Observability 与 Reliability。
+
+<Overview />
+
+<Figure id="FIG.01" caption="授信报告生成器当前界面 / 某一版本" placeholder="credit-product-main" />
+
+## 模型能生成报告，但它真的能工作吗？
+
+最早期的尝试非常直接：把资料交给一个通用大模型，让它生成授信报告。模型确实能「生成文本」，但生成过程不可控、难以稳定复现，也很难判断输出是否正确。
+
+这一阶段经历了三个版本：
+
+- General LLM —— 直接用通用模型生成报告。
+- OCR + Workflow —— 开始处理真实文档输入，用扣子搭建流程。
+- Vibe Coding —— 把 Workflow 变成网页应用，页面做出来了，报告却没有真正跑通。
+
+<Figure id="FIG.02" caption="早期 Vibe Coding 版本 / 历史版本" placeholder="credit-early-version" />
+
+<KeyStatement>能让 AI 写出代码 ≠ 能让 AI 构建可靠的软件</KeyStatement>
+
+## 当 AI 开始写软件，怎么知道一个模块真的完成了？
+
+Vibe Coding 的问题暴露出来：页面越做越多，但没人能确认某个模块是否真正完成，模块组合后问题不断累积。
+
+于是开发方式从「让 AI 帮我写代码」变成「我开始管理 AI 构建软件」：每个模块都要求设计文档、明确输入、明确输出、明确依赖、明确异常，以及最小单元测试和验收标准。
+
+## 专业金融分析，应该交给模型还是代码？
+
+<KeyStatement>Code calculates. LLM interprets.</KeyStatement>
+
+财务计算尽量由确定性代码完成，大模型负责专业解释，而不是让语言模型「凭感觉计算」。
+
+系统逐渐形成几个相对独立的专业能力：财报分析、信用分析、行业分析、项目分析、整合与校验。
+
+<Figure id="FIG.03" caption="财务分析流程 / 某一分析结果" placeholder="credit-report-output" />
+
+## 怎么知道一次优化真的更好了？
+
+随着系统越来越复杂，核心问题变成了：怎么知道一个改动真的让系统变好了？
+
+项目建立了分层评测体系：从最小的 Component（RAG 召回、财务计算、OCR、解析），到 Capability（财报、信用、行业、项目），再到完整的 System（授信报告）。
+
+<Figure id="FIG.04" caption="Evaluation / Evidence 示例" placeholder="credit-evaluation" />
+
+<KeyStatement>「感觉更好」≠ 系统真的变好了</KeyStatement>
+
+## 怎么让结果可以解释和追踪？
+
+现在的工作聚焦于让系统可解释、可追踪、可观测：Evidence 让来源、事实、分析和报告相互追溯；Harness 明确每个 Agent 的边界和运行契约；Observability 记录 Trace、Cost、Latency、Error。
+
+<Figure id="FIG.05" caption="当前系统 / 关键模块" placeholder="credit-evidence" />
+
+## Evolution Path
+
+<EvolutionPath />
+
+## Current System
+
+下面是当前系统架构（而非历史架构）。系统已经从一个模型直接生成报告，演变为「资料与数据 → 多个专业分析能力 → 结构化输出 → 整合 → 交叉校验 → 最终报告」的链路。
+
+<SystemMap />
+
+## Key Design Decisions
+
+<DesignDecisions />
+
+## Evaluation
+
+<EvaluationLayers />
+
+## What Didn't Work
+
+### 网页做出来了，报告没有
+
+没有最小单元测试和明确验收机制，页面逐渐做出来了，但无法稳定生成完整报告。
+
+后来停止继续堆功能，重新设计开发方法。学到的：有网页 ≠ 有一个可靠工作的完整系统。
+
+### 模块单独看起来完成，组合后却不断失败
+
+单元边界、输入输出和错误回传不足，单个模块看起来完成，组合后问题不断累积。
+
+后来明确每个单元的输入、输出、依赖、异常。学到的：模块边界与契约，比模块本身更重要。
+
+### 早期过度依赖通用模型能力
+
+专业逻辑没有被显式设计，依赖通用模型「凭感觉」完成专业分析。
+
+后来引入「Code calculates, LLM interprets」原则。学到的：专业能力需要被显式设计与验证。
+
+### RAG / Prompt 优化缺少系统 Evaluation
+
+没有建立分层评测体系，无法确认变化究竟是改进还是偶然。
+
+后来建立 Component / Capability / System 三层 Evaluation。学到的：「更好」必须被定义和验证，而不是被感觉。
+
+## Currently Working On
+
+<CurrentFocus />

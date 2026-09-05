@@ -1,0 +1,1660 @@
+# Waypoint — Visual Redesign Addendum v1
+
+> 本章节覆盖原设计文档中与首页视觉、页面排版、Card 风格、项目详情展示方式相关的视觉要求。
+> 不修改现有路由、数据结构、SEO、测试体系和核心内容，只重新设计视觉表达与阅读体验。
+
+---
+
+# 1. 本轮重设计目标
+
+当前版本的问题不是功能，而是视觉与信息呈现：
+
+- 首页像标准 AI SaaS Landing Page
+- Hero 过大、口号过重
+- 页面大量使用深蓝 Card，视觉节奏单一
+- 内容虽然完整，但像“把设计文档直接渲染成网页”
+- 授信项目详情存在严重文字墙
+- Evolution 8 个阶段全部以大 Card 展示，可读性差
+- 所有内容的重要程度看起来接近，缺少视觉主次
+- 技术标签、状态 Badge、边框使用过多
+- 缺少图片、截图、架构图等视觉证据
+- 整体缺少“个人站”的安静、克制和编辑感
+
+本次目标不是：
+
+「让网站更炫」
+
+而是：
+
+「让网站更像一个认真记录个人实践、思考和成长的数字空间。」
+
+核心视觉关键词：
+
+Editorial
+Personal
+Quiet
+Precise
+Readable
+Research-oriented
+Human
+
+避免：
+
+AI SaaS
+Dashboard
+Cyberpunk
+Developer Template
+大量 Card
+大量 Badge
+Glow
+Gradient
+科技蓝铺满页面
+
+---
+
+# 2. 整体 Art Direction
+
+## 2.1 从深色 AI 网站改为浅色 Editorial 风格
+
+V1 本轮优先尝试 LIGHT THEME。
+
+页面主背景：
+
+#F7F7F4
+
+或接近暖灰 / 米白的 neutral background。
+
+正文主色：
+
+#171717
+
+Secondary Text：
+
+#666660
+
+Border：
+
+#DDDCD6
+
+Accent：
+
+使用一个克制的蓝色，例如：
+
+#2563EB
+
+但 Accent 只能用于：
+
+- Link
+- Active State
+- 小型 Label
+- Hover
+- 少量结构提示
+
+禁止大面积蓝色背景。
+
+不要使用大面积深海军蓝。
+
+---
+
+# 3. Typography
+
+中文优先使用系统字体：
+
+font-family:
+"PingFang SC",
+"Hiragino Sans GB",
+"Microsoft YaHei",
+"Noto Sans SC",
+system-ui,
+sans-serif;
+
+英文 / Mono 可继续使用：
+
+Inter
+JetBrains Mono
+
+但 Mono 只能用于：
+
+- Section Label
+- Stage Number
+- Metadata
+- Status
+- 英文小标题
+
+禁止正文大量使用 Mono。
+
+---
+
+## 字号层级
+
+Desktop：
+
+Site Name:
+18–20px
+
+Homepage Intro:
+18–22px
+不要超过 24px
+
+Page H1:
+40–52px
+
+Project Title:
+42–52px
+
+Section H2:
+26–32px
+
+Subheading:
+18–21px
+
+Body:
+16–18px
+
+Metadata / Mono Label:
+11–13px
+
+Mobile 自动缩小，但正文不得低于 15px。
+
+---
+
+# 4. Layout
+
+最大内容宽度：
+
+1200px
+
+项目 Case Study 正文：
+
+760–880px
+
+涉及截图、架构图等视觉内容时：
+
+可以突破正文宽度，使用：
+
+1000–1200px
+
+形成：
+
+窄正文
+→ 宽视觉
+→ 窄正文
+
+的阅读节奏。
+
+---
+
+## 页面留白
+
+增加垂直留白。
+
+不要试图把大量内容塞在一屏。
+
+Section 之间：
+
+Desktop 至少 96–140px
+
+正文段落之间：
+
+20–28px
+
+不要通过大量 Card 来区分 Section。
+
+优先使用：
+
+Whitespace
+Typography
+Thin Divider
+Alignment
+
+来创造层级。
+
+---
+
+# 5. Header
+
+保持极简。
+
+左：
+
+Waypoint
+
+右：
+
+AI产品实践
+我的思考
+好物共享
+关于
+
+Header 高度约：
+
+64–72px
+
+要求：
+
+- 无明显厚重背景
+- 无大色块
+- Border Bottom 极弱或完全取消
+- 滚动时可以 sticky
+- 不需要发光、阴影
+- Navigation 字号约 14–15px
+
+GitHub 不必作为主导航项。
+
+可放 About 或 Footer。
+
+---
+
+# 6. Homepage：彻底取消当前 Hero
+
+删除：
+
+「把复杂金融工作，做成可验证、可迭代的 AI 系统。」
+
+删除：
+
+「记录金融 AI 产品的构建、复盘与研究……」
+
+删除：
+
+「查看项目」大蓝色 CTA Button。
+
+Homepage 不再采用：
+
+Large Hero
++
+CTA
++
+Featured Project
++
+Cards
+
+结构。
+
+---
+
+# 7. Homepage 新结构
+
+首页定位：
+
+Directory / Entry Page
+
+首页主要任务：
+
+帮助访问者进入三个内容世界。
+
+结构：
+
+Header
+
+Small Intro
+
+Three Main Entrances
+
+Optional Recent Update
+
+Footer
+
+---
+
+# 8. Homepage Intro
+
+顶部保留大量留白。
+
+Waypoint 下方可以出现一句极简描述：
+
+「个人的思考、成长和实践。」
+
+仅此一句。
+
+不要再解释：
+
+RAG
+Agent
+Evaluation
+Evidence
+金融 AI
+
+不要在首屏试图完成个人定位介绍。
+
+视觉：
+
+Waypoint Logo / Name
+
+↓
+
+较大空白
+
+↓
+
+个人的思考、成长和实践。
+
+↓
+
+三个入口
+
+Intro 字号约 18–22px。
+
+不要 Bold。
+
+不要 Center。
+
+保持左对齐。
+
+---
+
+# 9. Homepage 三个主入口
+
+三个栏目：
+
+01
+AI产品实践
+Practice
+
+02
+我的思考
+Notes
+
+03
+好物共享
+Resources
+
+Desktop 推荐横向三栏。
+
+但不要做成三个深色 Card。
+
+更像 Editorial Column。
+
+例如：
+
+01 / PRACTICE
+
+AI产品实践
+
+项目、尝试、失败、重构，
+以及一个想法如何逐渐成为系统。
+
+授信报告生成器                →
+Excel 数据处理工具             →
+
+查看全部实践                   →
+
+
+02 / NOTES
+
+我的思考
+
+关于 AI、产品和技术的一些
+仍在变化中的判断。
+
+RAG 不只是召回                 →
+从知识图谱到本体               →
+
+查看全部思考                   →
+
+
+03 / RESOURCES
+
+好物共享
+
+真正给我带来帮助的书、
+工具、论文和资料。
+
+深入理解 AI Agent              →
+...
+
+查看全部资源                   →
+
+---
+
+三个栏目之间：
+
+使用细 Divider。
+
+不要完整边框包围。
+
+不要圆角矩形 Card。
+
+Hover：
+
+标题或箭头轻微改变颜色即可。
+
+禁止整体 Card translate / glow。
+
+---
+
+# 10. 首页不要展示大量项目正文
+
+Homepage 只是入口。
+
+授信报告生成器在首页最多：
+
+项目名
++
+一句短描述
++
+状态 / 时间（可选）
+
+例如：
+
+授信报告生成器
+从通用 LLM 到一个逐渐建立 Evaluation 与 Reliability 的金融 AI 实践。
+
+不要出现：
+
+6 个 Tag
+完整 Evolution
+一大段项目介绍
+GitHub 大按钮
+
+这些属于项目详情页。
+
+---
+
+# 11. Projects 页面
+
+Projects 页面标题：
+
+AI产品实践
+
+不要使用：
+
+PROJECTS
+项目
+
+两套标题重复占空间。
+
+可以保留极小英文 Label：
+
+PRACTICE
+
+然后：
+
+AI产品实践
+
+---
+
+项目列表建议采用 Editorial Project Index。
+
+Example：
+
+01
+
+授信报告生成器
+Credit Report Generator
+
+一个持续迭代中的金融 AI 项目。
+
+2025 — NOW
+ITERATING
+
+                                    查看项目 →
+
+
+------------------------------------------------
+
+
+02
+
+Excel 数据处理工具
+Excel Data Tool
+
+关于自动化、数据处理与 AI Coding 的一次实践。
+
+                                    查看项目 →
+
+不要给每个项目一个巨大 Card。
+
+---
+
+# 12. Credit Report Generator — 项目页总体原则
+
+当前页面最大问题：
+
+信息全部展开，像项目文档。
+
+新版必须遵循：
+
+SCAN FIRST
+READ SECOND
+
+即：
+
+访问者第一次浏览时，
+只通过：
+
+标题
+图片
+大数字
+短句
+流程
+关键判断
+
+就能理解项目。
+
+感兴趣后才阅读详细文字。
+
+---
+
+# 13. 项目页 Hero
+
+不要再次使用巨型宣传式 Hero。
+
+使用：
+
+Small Metadata
+
+01 / AI PRODUCT PRACTICE
+2025 — NOW
+ITERATING
+
+↓
+
+授信报告生成器
+
+Credit Report Generator
+
+↓
+
+一句描述：
+
+「一个仍在持续迭代的金融 AI 实践。」
+
+下面直接进入视觉素材。
+
+不要放 6 个 Tag。
+
+如果需要 Tag：
+
+最多 3 个：
+
+Financial AI
+RAG
+Evaluation
+
+---
+
+# 14. 项目页第一屏必须有视觉内容
+
+标题后尽快出现：
+
+PRODUCT SCREENSHOT
+
+或：
+
+REPORT SCREENSHOT
+
+推荐使用大尺寸图片：
+
+aspect ratio 16:9 或接近浏览器界面比例。
+
+图片可以占 900–1100px。
+
+图片下面使用极小 Caption：
+
+FIG.01
+授信报告生成器当前界面 / 某一版本
+
+如果当前没有真实截图：
+
+不要生成虚假的产品截图。
+
+建立：
+
+/public/images/credit-report/
+
+图片槽位。
+
+使用明确 Placeholder：
+
+「Product screenshot to be added」
+
+但 Placeholder 不要做成漂亮的假产品 UI。
+
+后续由真实素材替换。
+
+---
+
+# 15. 项目 Overview 重构
+
+删除当前：
+
+Overview
+Problem
+Product
+Product Boundary
+
+连续大段文字形式。
+
+改成：
+
+## What is this?
+
+一句约 40–70 字的项目介绍。
+
+然后三栏：
+
+CONTEXT
+
+授信研究需要处理企业、
+财务、行业、项目及大量
+外部资料。
+
+
+GOAL
+
+探索 AI 如何辅助资料处理、
+分析、校验和报告生成。
+
+
+BOUNDARY
+
+AI 辅助判断，
+不替代最终授信决策。
+
+桌面三栏。
+
+移动端纵向。
+
+不要 Card。
+
+使用 Column + Divider。
+
+---
+
+# 16. 用问题驱动项目叙事
+
+项目后续内容不要直接按“功能目录”展示。
+
+使用几个关键问题推动阅读：
+
+01
+
+模型能生成报告，
+但它真的能工作吗？
+
+↓
+
+介绍：
+General LLM
+OCR + Workflow
+Vibe Coding
+
+配：
+早期产品截图 / 流程图
+
+
+02
+
+当 AI 开始写软件，
+怎么知道一个模块真的完成了？
+
+↓
+
+介绍：
+Minimal Unit
+Design Doc
+Testing
+Audit
+
+
+03
+
+专业金融分析，
+应该交给模型还是代码？
+
+↓
+
+介绍：
+
+Code calculates.
+LLM interprets.
+
+配：
+财务分析流程图 / 示例截图
+
+
+04
+
+怎么知道一次优化真的更好了？
+
+↓
+
+Evaluation
+
+
+05
+
+怎么让结果可以解释和追踪？
+
+↓
+
+Evidence
+Harness
+Observability
+
+每个问题段落应形成：
+
+大问题
++
+短文字
++
+视觉
++
+少量细节
+
+而不是：
+
+Heading
++
+五段正文
++
+Bullet List
+
+---
+
+# 17. Evolution 重构
+
+当前 8 个大型蓝色 Card 全部删除。
+
+不要默认展示：
+
+WHAT I WANTED
+WHAT BROKE
+WHAT CHANGED
+WHAT I LEARNED
+
+全部文本。
+
+改为：
+
+EVOLUTION PATH
+
+01
+GENERAL LLM
+
+通用模型生成报告
+
+能生成东西，
+但无法形成可靠产品。
+
+----------------------------
+
+02
+OCR + WORKFLOW
+
+开始处理真实文档输入。
+
+----------------------------
+
+03
+APPLICATION
+
+页面做出来了，
+报告却没有真正跑通。
+
+----------------------------
+
+04
+ENGINEERING METHOD
+
+开始管理 AI 构建软件。
+
+----------------------------
+
+...
+
+08
+RELIABILITY
+
+Evidence / Harness / Observability
+
+---
+
+建议视觉：
+
+左侧：
+
+01
+02
+03
+...
+
+右侧：
+
+Title
+One-sentence Summary
+
+形成强纵向节奏。
+
+不要每一个节点加完整外框。
+
+---
+
+## Evolution Detail
+
+每个节点可以点击 / 展开。
+
+展开后显示：
+
+当时想解决什么
+出了什么问题
+做了什么改变
+形成了什么认识
+
+默认折叠。
+
+这样：
+
+快速浏览者看到 Evolution Path。
+
+深度阅读者可以展开。
+
+展开状态使用：
+
+淡灰背景
+或
+左侧细竖线
+
+不要使用厚重 Card。
+
+---
+
+# 18. 项目截图节奏
+
+Case Study 中建议至少预留 5 个 Image Slot：
+
+FIG.01
+产品主界面
+
+FIG.02
+某一份报告 / 分析结果
+
+FIG.03
+早期 Vibe Coding 版本或历史版本
+
+FIG.04
+Evaluation / Evidence 示例
+
+FIG.05
+当前系统或关键模块
+
+每张图下必须有 Caption。
+
+图片不能只是装饰。
+
+每张图应该证明一个具体事实：
+
+「产品真实存在」
+「阶段确实发生变化」
+「系统确实有结构」
+「Evaluation 确实在运行」
+
+---
+
+# 19. Current System
+
+保留架构图概念。
+
+但重新设计。
+
+不要当前这种：
+
+大量同样大小的蓝色矩形垂直排列。
+
+改成分层 System Map。
+
+建议：
+
+Documents / Data
+
+↓
+
+Parsing & Routing
+
+↓
+
+Financial
+Credit
+Industry
+Project
+
+↓
+
+Evidence
+
+↓
+
+Integration & Verification
+
+↓
+
+Report
+
+↓
+
+Human Review
+
+专业模块使用横向关系。
+
+Evidence / Verification 形成明显结构节点。
+
+视觉使用：
+
+细线
+白底
+黑字
+非常浅的灰色 Surface
+
+Accent 只强调：
+
+Evidence
+Human Review
+或 Current Focus
+
+不需要每一个 Node 都有蓝色背景。
+
+---
+
+# 20. Key Design Decisions
+
+不要正文段落堆叠。
+
+做成四个 Editorial Blocks：
+
+01
+
+Workflow vs Agent
+
+确定性任务优先 Workflow；
+需要开放搜索和判断时，
+才引入有边界的 Agent.
+
+
+02
+
+LLM vs Code
+
+Code calculates.
+LLM interprets.
+
+
+03
+
+Generate vs Verify
+
+生成与验证是两个不同能力。
+
+
+04
+
+Modular vs Monolithic
+
+Small capability.
+Clear contract.
+Independent evaluation.
+
+---
+
+四个块可以：
+
+2 × 2 Grid
+
+但不要完整 Card。
+
+使用：
+
+Top Border
+Number
+Large Principle
+Short Explanation
+
+即可。
+
+---
+
+# 21. Evaluation & Reliability
+
+不要直接列：
+
+Accuracy
+Completeness
+Groundedness
+...
+
+优先视觉化层级：
+
+SYSTEM
+完整授信报告
+
+↑
+
+CAPABILITY
+财务 / 信用 / 行业 / 项目
+
+↑
+
+COMPONENT
+RAG / OCR / Calculation / Parsing
+
+可以使用原生 HTML / CSS / SVG。
+
+下面再补 Metrics。
+
+让人先理解：
+
+Evaluation 是分层的。
+
+再读指标。
+
+---
+
+# 22. Things That Didn't Work
+
+这是项目的重要内容。
+
+不要隐藏。
+
+但不要像当前文档式 Bullet List。
+
+标题：
+
+What Didn't Work
+
+或中文：
+
+哪些东西没有工作
+
+每个失败案例使用：
+
+01
+
+网页做出来了，
+报告没有。
+
+原因：
+没有最小单元测试和明确验收。
+
+改变：
+停止堆功能，重新设计开发方法。
+
+
+02
+
+模块单独看起来完成，
+组合后却不断失败。
+
+...
+
+
+视觉要求：
+
+Large Failure Statement
+
+↓
+
+Small Reason
+
+↓
+
+Small Change
+
+不要 Card 海。
+
+---
+
+# 23. Current Focus
+
+页面接近结尾时展示。
+
+标题：
+
+Currently Working On
+
+或：
+
+现在在解决什么
+
+使用大文字关键词：
+
+Evidence Architecture
+Harness
+RAG Architecture
+Evaluation
+Observability
+
+每项下面只写一句。
+
+不要重新解释完整技术概念。
+
+---
+
+# 24. Thoughts 页面
+
+页面更接近：
+
+Essay Index
+
+不是 Card Grid。
+
+示例：
+
+THOUGHTS
+
+我的思考
+
+一些还在变化中的想法。
+
+
+01
+
+RAG 不只是召回：
+用路由器重新设计检索策略
+
+RAG · ROUTER · RETRIEVAL
+
+DRAFTING
+
+
+------------------------------------------------
+
+
+02
+
+从知识图谱到本体：
+LLM 如何获得多跳关系与逻辑推理能力
+
+KNOWLEDGE GRAPH · ONTOLOGY
+
+RESEARCHING
+
+不要两个大蓝色 Card。
+
+---
+
+# 25. Resources 页面
+
+名称：
+
+好物共享
+
+而不是：
+
+资源
+
+Subheading 可使用：
+
+Things Worth Sharing
+
+资源列表也不要 Card Grid。
+
+使用 List / Index。
+
+每个资源：
+
+类型
+Title
+一句 Why It Matters
+Tags（最多 2–3 个）
+
+例如：
+
+BOOK / 01
+
+深入理解 AI Agent
+
+从设计原理到工程实践，
+与当前 Harness 设计非常相关。
+
+AI Agent · Engineering
+
+                                     ↗
+
+---
+
+# 26. 关于页
+
+About 不需要履历。
+
+标题：
+
+About Waypoint
+
+正文：
+
+「个人的思考、成长和实践。」
+
+之后可以再用两三段非常短的文字解释：
+
+这里记录正在做的项目、
+仍在变化的判断，
+以及一些真正帮助过我的东西。
+
+不要写长篇 Personal Branding Copy。
+
+---
+
+# 27. Card Rules
+
+本轮必须大幅减少 Card。
+
+原则：
+
+If everything is a card,
+nothing has hierarchy.
+
+只有以下场景可以使用完整 Card：
+
+- 真正独立的交互组件
+- 有明确容器需求的视觉内容
+- 特定 Highlight
+
+普通：
+
+Project
+Thought
+Resource
+Evolution Stage
+
+默认禁止使用大圆角 Card。
+
+---
+
+# 28. Radius
+
+不要：
+
+rounded-xl everywhere
+
+全站建议：
+
+Card / Image：
+
+4–8px
+
+Button：
+
+4–6px
+
+Tag：
+
+3–4px
+
+避免大量 Pill。
+
+Status 可以使用纯文字：
+
+ITERATING
+
+而不是：
+
+[ • ITERATING ]
+
+---
+
+# 29. Buttons
+
+尽可能减少 Button。
+
+页面跳转优先：
+
+Text Link + Arrow
+
+例如：
+
+查看项目 ↗
+
+阅读 →
+
+查看全部 →
+
+只有真正 Primary Action 才使用 Button。
+
+首页甚至可以完全没有实心 Button。
+
+---
+
+# 30. Tags
+
+当前 Tag 数量过多。
+
+原则：
+
+最多展示 3 个主要 Tag。
+
+其他 Tag 放详情页末尾或者不显示。
+
+Tag 不需要每一个都有边框。
+
+可以简单显示：
+
+RAG · Evaluation · Financial AI
+
+而不是：
+
+[RAG] [Evaluation] [Financial AI]
+
+---
+
+# 31. 图文比例
+
+授信 Case Study 必须达到明显的图文节奏。
+
+目标不是精确比例，但视觉上避免连续出现：
+
+超过 2–3 屏纯文字。
+
+原则：
+
+2–3 个文字 Section 后，
+必须出现：
+
+截图
+图表
+架构图
+流程图
+可视化关系
+或大号 Key Statement
+
+打断阅读。
+
+---
+
+# 32. Key Statement
+
+项目中的重要认识可以成为视觉元素。
+
+例如：
+
+「能让 AI 写出代码
+≠
+能让 AI 构建可靠的软件」
+
+和：
+
+「Code calculates.
+LLM interprets.」
+
+和：
+
+「感觉更好
+≠
+系统真的变好了」
+
+可以使用：
+
+32–44px
+
+大量留白
+
+作为 Section Transition。
+
+不要放在 Card 里。
+
+---
+
+# 33. Animation
+
+保持极少。
+
+允许：
+
+Opacity
+150–250ms
+
+Text Color
+150–200ms
+
+Arrow TranslateX
+2–4px
+
+禁止：
+
+Large Fade-in sequence
+Parallax
+Glow
+Mouse Trail
+3D
+Particle
+Gradient Animation
+
+内容应该静止也成立。
+
+---
+
+# 34. Mobile
+
+375px 必须重点检查。
+
+三栏目首页：
+
+变为纵向三个入口。
+
+不要变成三个巨大 Card。
+
+Evolution：
+
+Number
+Title
+Summary
+
+单列。
+
+截图：
+
+100% width。
+
+正文：
+
+15–17px。
+
+所有页面：
+
+不得产生横向滚动。
+
+---
+
+# 35. 图片素材规则
+
+真实项目截图由用户后续提供。
+
+禁止：
+
+- AI 生成假产品截图
+- 编造 Dashboard
+- 编造 Evaluation 数据
+- 编造报告内容
+- 使用与项目无关的 Stock Photo
+
+没有真实图片时：
+
+创建有明确文件名的 Placeholder Slot：
+
+credit-product-main
+credit-report-output
+credit-early-version
+credit-evaluation
+credit-evidence
+
+并在页面中降低 Placeholder 视觉权重。
+
+---
+
+# 36. 本轮视觉测试目标
+
+实现后不要只运行自动测试。
+
+需要人工截图以下页面：
+
+Desktop 1440px：
+
+1. Homepage first viewport
+2. Homepage three entrances
+3. Practice / Projects page
+4. Credit Report Hero + Overview
+5. Credit Report Evolution
+6. Credit Report System
+7. Credit Report Design Decisions
+8. Thoughts
+9. Resources
+
+Mobile 375px：
+
+10. Homepage
+11. Credit Report Hero
+12. Evolution
+13. Mobile Navigation
+
+将截图用于第二轮视觉审查。
+
+---
+
+# 37. 本轮明确不要做
+
+不要新增功能。
+
+不要改：
+
+- MDX content architecture
+- Routing
+- SEO
+- Playwright architecture
+- Vitest architecture
+- Data model
+
+不要：
+
+为了所谓「高级感」
+重新添加渐变、
+Blur、
+Glassmorphism、
+Glow、
+复杂动画。
+
+本轮只解决：
+
+Information Hierarchy
+Typography
+Whitespace
+Editorial Layout
+Image / Text Rhythm
+Readability
+
+---
+
+# 38. 最重要原则
+
+Waypoint 不应该试图证明：
+
+「这是一个很厉害的 AI 网站。」
+
+Waypoint 应该让访问者自然感觉到：
+
+「这里有一个人在认真做东西，
+认真想问题，
+也认真记录自己怎么变得更好。」
+
+Visual hierarchy > Decoration
+
+Whitespace > Card
+
+Evidence > Marketing copy
+
+Images + diagrams > Walls of text
+
+Questions > Feature lists
+
+Personal > Corporate
+
+Quiet > Impressive
+
+Readable > Cool
+
+---
+
+# 39. Implementation Order
+
+不要一次重构所有页面。
+
+Step 1
+建立新的 Color / Typography / Spacing Token。
+
+Step 2
+只重做：
+
+Header
+Homepage
+
+完成后截图检查。
+
+Step 3
+重做：
+
+Projects Index
+Thoughts Index
+Resources Index
+
+截图检查。
+
+Step 4
+重做：
+
+Credit Report Hero
+Overview
+Visual Slots
+
+截图检查。
+
+Step 5
+重做：
+
+Evolution
+
+截图检查。
+
+Step 6
+重做：
+
+Current System
+Design Decisions
+Evaluation
+Failures
+Current Focus
+
+Step 7
+Responsive + Accessibility。
+
+Step 8
+完整测试。
+
+不要因为现有测试期望 DOM 结构而保留糟糕视觉结构。
+
+如果重构导致测试需要更新，
+应更新测试以验证新的正确行为。
+
+---
+
+# 40. Definition of Done — Visual
+
+本轮只有满足以下条件才算完成：
+
+- 首页不再存在大型 slogan
+- 首页第一视觉重点为三个内容入口
+- 首页不再像 SaaS Landing Page
+- 大部分内容不再由 Card 包围
+- Tag 数量明显减少
+- 实心 Button 数量明显减少
+- 授信详情不再连续出现大段文字墙
+- Evolution 默认状态可快速扫读
+- Case Study 已预留真实截图位置
+- Current System 有真正的信息层级
+- Design Decisions 可以在 10 秒内扫完
+- Thoughts 看起来像文章索引，而非产品卡片
+- Resources 看起来像 curated list，而非后台数据卡
+- Desktop 有明显留白和阅读节奏
+- 375px Mobile 不拥挤
+- 页面整体更接近 editorial / personal research site
+- 不使用假截图或虚构数据
+- 所有原有功能测试重新通过
+
+不要试图保守修改现有 CSS。允许大幅推翻目前的视觉结构。现有版本只保留内容、数据、路由和功能，不把现有 UI 当作需要兼容的设计基线。
